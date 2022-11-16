@@ -2,8 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import MenuIcon from '../Components/MenuIcon'
 
-const TopMenuSection = () => {
+
+const TopMenuSection: React.FC = () => {
+
     
+
     return (
   
       <section>
@@ -30,6 +33,5 @@ const TopMenuSection = () => {
     )
   }
   
-  export default TopMenuSection
+  export const TopMenuSection
 
-  
