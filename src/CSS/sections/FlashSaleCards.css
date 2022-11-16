@@ -1,0 +1,59 @@
+/* -------------------------Flashsale-box-left-side---------------------------------- */
+
+ 
+.flash-sale-left{
+    margin-top: 5rem;  
+}
+
+    .flash-sale-left .container{
+        display: flex;
+        flex-direction: row
+    }
+
+/* Grid - card component */
+.product_component_left{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    flex: 1;
+  
+}
+
+ /* placeholder-box  */
+.flash-sale-left .img_left_box {
+    background-color: var(--color-grey-1);
+    height: 620px;
+    width: 630px;
+}
+     /* Flex-pos.  */
+    .flash-sale-left .img_left_box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        text-align: center;
+    }
+
+        .flash-sale-left .img_left_box h1 {
+           font-weight: 600;
+           font-size: 55px;
+           color: var(--color-white-1);
+        }
+            /*Button*/
+        .img_left_box .img_left_button .special_button_white {
+            background-color: white;
+            color: black; 
+            font-weight: bold;
+    
+        }
+            .img_left_box .img_left_button .special_button_white:hover {
+                background-color: black;
+                color: white;
+        
+            }
+
+.flash-sale-left .card .img {
+    height: 323px;
+    width: 255px;
+   
+} 
+

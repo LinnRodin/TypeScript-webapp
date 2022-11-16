@@ -1,0 +1,175 @@
+/* -------------------------------ProductCardsSection---------------------------- */
+             /* ------------------Featured-Products------------------------*/
+
+
+.new-arrivals .grid {        
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: repeat(4, 1fr); 
+    
+    /*Comment: Besides grid-gap/grid-column-gap. To reduce the gap we can go for a solution in "featured product section" like --> grid-template-columns: repeat(4, 280px); or to use % ,
+    which I actively chose not to do, since I thought this design looked better and followed the lines better. 
+    In this way we could use one and the same component. If we are to do different designs on different sections, We need to build different components of course. */
+ 
+}
+
+.card {
+    position: relative;
+    height: 323px;
+    width: 255px;
+    border-radius: 0;
+    border: none;
+    overflow: hidden;
+    
+   
+}
+
+    .card .card-menu {
+        position: absolute;
+        top: 100%;
+        right: 2%;
+        list-style: none;
+        margin: auto;
+        padding: 0.5rem;
+        background-color: transparent;
+        transition: top 0.1s ease-in-out;
+        outline: none;
+        border: none;
+    }
+
+        .card:hover .card-menu {
+            top: 1px;
+        }
+
+        .card .card-menu li {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+           
+        }
+
+            .card-menu li .btn  {
+                border-radius: 50%;
+                color: white;
+                box-shadow: 0 0 4px 4px var(--color-grey-9);
+                
+            }
+
+            
+                .card-menu li .btn:hover  {
+                    background-color: black;
+                    transition: 0.1 ease-in-out;
+                
+                }
+
+                    .card-menu li .btn i {
+                        color: black;
+                        
+                    }
+
+                        .card-menu li .btn i:hover  {
+                            color: white;
+                            transition: 0.1 ease-in-out;
+                        }
+
+
+.card .card-general {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+ 
+    .card-general  {
+        position: relative;
+        left: 0;
+        bottom: 40px;
+        width: 100%;
+        background-color: var(--color-white);
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 0;
+    } 
+
+        .card-info{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-info .card-category {
+            margin-bottom: 5px;
+            font-weight: var(--font-weight-regular);
+            color: var(--color-grey-6);
+            font-size: 15px;
+           
+        }
+
+
+        /* Header Featured Products */
+        .new-arrivals .header h1 {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 50px;
+            margin-top: 100px;
+            text-align: center;
+            margin-right: 2rem;
+        
+            
+        }
+
+        
+        .card-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .card-info .card-rating {
+            color: var(--color-theme);
+            margin-bottom: 10px;
+          
+        }
+
+        .card .card-general {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+ 
+    
+
+            /* Button QUICK VIEW */
+ 
+        .card .card-general .special_button {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            margin-top: 5.3rem;
+            transition: top 0.1s ease-in-out;
+        }
+            .card:hover .card-general .special_button {
+                top: -135px;
+                
+                
+            }   
+                .card-general .special_button:hover {
+                    background-color:black;
+                    color: white;
+                }
+    
+
+                l .card-img {
+                    height: 323px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                .card-new-price {
+                    font-weight: bold;
+                }
+  

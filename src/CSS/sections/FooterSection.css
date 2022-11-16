@@ -1,0 +1,31 @@
+/* --------------------------------Footer section---------------------------- */
+
+footer {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-grey-3);
+    border-top: 1px solid var(--color-grey-9);
+    border-bottom: 1px solid var(--color-grey-9);
+    padding: 25px;
+
+}
+
+footer ._social_media {
+    margin-bottom: 25px;
+}
+
+    footer ._social_media a {
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+        footer ._social_media a:hover {
+            color: var(--color-theme);
+            text-decoration: none;
+        }

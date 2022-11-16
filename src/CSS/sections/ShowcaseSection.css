@@ -1,0 +1,60 @@
+
+/* ----------------------------------Showcase-section-------------------------------------------------*/
+
+.showcase{
+    width: 100%;
+    background-color: #F5F5F5;
+    
+}
+
+.showcase .container .showcase-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+}
+
+    .showcase-content h1 {
+        font-weight: 800;
+        font-size: 65px;
+        text-align: center;
+    }
+
+    .showcase-content p {
+        font-size: 17px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        
+    }
+
+
+    .showcase-content img {
+        width: 500px;
+        height: 550px;
+    }
+
+    ._img-left {
+        margin-left:-120px;
+    }
+
+    ._img-right {
+        margin-right:-120px;
+    }
+
+
+/*--------Button-showcase------*/
+
+
+.showcase-content .general_button .special_button {
+    margin-left: 7rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+    .showcase-content .general_button .special_button:hover{
+        background-color: black;
+        color: white;
+        transition: 0.3 ease-in-out;
+    }
+
