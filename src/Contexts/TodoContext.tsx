@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
-import { Todo } from "../models/todoModel";
+import { Todo } from "../Models/todoModel";
 
 export interface TodoContextType {
     todo: string

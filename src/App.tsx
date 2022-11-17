@@ -58,16 +58,16 @@ function App() {
     <BrowserRouter>
       <ProductContext.Provider value={products}>
         <Routes>
-         {/* <Route path="/" element={<HomeView /> } /> */}
-          {/* <Route path="/products" element={<ProductsView /> } /> */}
-          {/* <Route path="/categories" element={<CategoriesView /> } /> */}
-          {/* <Route path="/products/:id" element={<ProductDetailsView /> } /> */}
-          {/* <Route path="/contacts" element={<ContactsView /> } /> */}
-          {/* <Route path="/search" element={<SearchView /> } /> */}
-          {/* <Route path="/compare" element={<CompareView /> } /> */}
+         <Route path="/" element={<HomeView /> } /> 
+          <Route path="/products" element={<ProductsView /> } /> 
+          <Route path="/categories" element={<CategoriesView /> } /> 
+          <Route path="/products/:id" element={<ProductDetailsView /> } /> 
+          <Route path="/contacts" element={<ContactsView /> } /> 
+          <Route path="/search" element={<SearchView /> } /> 
+          <Route path="/compare" element={<CompareView /> } /> 
           <Route path="/wishlist" element={<WishListView /> } />
-          {/* <Route path="/shoppingcart" element={<ShoppingCartView /> } /> */}
-          {/* <Route path="*" element={<NotFoundView /> } /> */}
+          <Route path="/shoppingcart" element={<ShoppingCartView /> } /> 
+          <Route path="*" element={<NotFoundView /> } /> 
         </Routes>
       </ProductContext.Provider>
     </BrowserRouter>

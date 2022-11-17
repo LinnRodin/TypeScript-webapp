@@ -1,8 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+interface IProductCardProps {
 
-const ProductCard = ({product}) => {
+  product: Product
+  
+}
+
+
+
+const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => {
 
   const addToWishlist = (e) => {
     console.log(`${e} added to wish list`)

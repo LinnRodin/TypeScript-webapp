@@ -1,7 +1,12 @@
 import React from 'react'
 import ProductCard from '../Components/ProductCard'
 
-const FlashSale2Cards = ({ products = []}) => {
+interface IFlashSale2CardsProps {
+
+  products: product[]
+}
+
+const FlashSale2Cards: React.FC<IFlashSale2CardsProps> = ({ products = []}) => {
   return (
       
     <section className="flash-sale-right">

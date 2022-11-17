@@ -1,8 +1,13 @@
 import React from 'react'
 import ProductCard from '../Components/ProductCard'
 
+interface IProductCardProps {
+    title: string
+    products: Product[]
+}
 
-const ProductCardsSection = ({title, products = []}) => {
+
+const ProductCardsSection: React.FC<IProductCardProps> = ({title = "", products = []}) => {
     
   
     return (

@@ -1,6 +1,13 @@
 import React from 'react'
 
-const MapSection = () => {
+interface Props {
+ 
+  allowFullScreen?: 
+
+}
+
+
+const MapSection: React.FC<Props> = () => {
   return (
 
     

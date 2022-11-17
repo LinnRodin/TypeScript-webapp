@@ -1,9 +1,9 @@
 import React from 'react'
-import { TodoContext, TodoContextType } from '../context/TodoContext';
-import { Todo } from '../models/todoModel'
+import { TodoContext, TodoContextType } from '../Contexts/TodoContext';
+import { Todo } from '../Models/todoModel'
 
 
-const TodoList: React.FC = () => { //vi måste definera genom <Props> att vi ska använda det för att items ska fungera 
+const TodoList: React.FC = () => { 
   const { todos } = React.useContext(TodoContext) as TodoContextType;
 
   return (
