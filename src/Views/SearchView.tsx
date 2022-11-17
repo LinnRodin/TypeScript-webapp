@@ -4,7 +4,7 @@ import TopMenuSection from '../Sections/TopMenuSection'
 
 
 const SearchView = () => {
-  window.top.document.title = 'Search | Fixxo.'
+  document.title = 'Search | Fixxo.'
   return (
     <>
      <TopMenuSection />

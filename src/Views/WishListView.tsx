@@ -4,7 +4,7 @@ import { TopMenuSection } from '../Sections/TopMenuSection'
 
 
 const WishListView = () => {
-  // window.top.document.title = 'WishList | Fixxo.'
+  document.title = 'WishList | Fixxo.'
   return (
     <>
     <TopMenuSection />

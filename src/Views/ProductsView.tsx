@@ -6,7 +6,7 @@ import FooterSection from '../Sections/FooterSection'
 import {ProductContext} from '../Contexts/contexts'
 
 const ProductsView = () => {
-  window.top.document.title = 'Products | Fixxo.'
+   document.title = 'Products | Fixxo.'
   const productContext = useContext(ProductContext)
 
   return (

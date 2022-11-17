@@ -4,7 +4,7 @@ import TopMenuSection from '../Sections/TopMenuSection'
 import UnderConstruction from '../Assets/Images/UnderConstruction.jpg'
 
 const CategoriesView = () => {
-  window.top.document.title = 'Categories | Fixxo.'
+  document.title = 'Categories | Fixxo.'
   return (
     <>
      <TopMenuSection />

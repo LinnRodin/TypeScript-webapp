@@ -3,7 +3,7 @@ import FooterSection from '../Sections/FooterSection'
 import TopMenuSection from '../Sections/TopMenuSection'
 
 const CompareView = () => {
-  window.top.document.title = 'Compare | Fixxo.'
+  document.title = 'Compare | Fixxo.'
   return (
     <>
     <TopMenuSection />

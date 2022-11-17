@@ -4,7 +4,7 @@ import TopMenuSection from '../Sections/TopMenuSection'
 import NotFoundImage from '../Assets/Images/404-img1.gif'
 
 const NotFoundView = () => {
-  window.top.document.title = 'NotFound | Fixxo.'
+  document.title = 'NotFound | Fixxo.'
 
   return (
     

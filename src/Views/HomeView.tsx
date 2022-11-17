@@ -10,7 +10,7 @@ import FlashSale2Cards from '../Sections/FlashSale2Cards'
 import InfoBoxesSection from '../Sections/InfoBoxesSection'
 
 const HomeView = () => {
-  window.top.document.title = 'Fixxo.'
+    document.title = 'Fixxo.'
   
   const productContext = useContext(ProductContext)
 
