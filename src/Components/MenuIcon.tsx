@@ -1,7 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const MenuIcon = ({link, icon, quantity}) => {
+interface Props{
+    link: string
+    icon: string
+    quantity?: number
+
+}
+
+const MenuIcon: React.FC<Props> = ({link, icon, quantity}) => {
     return (
   
       <button className="btn btn-light btn-circle btn-sm">

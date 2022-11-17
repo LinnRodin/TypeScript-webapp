@@ -1,9 +1,10 @@
 import React from 'react'
 import FooterSection from '../Sections/FooterSection'
-import TopMenuSection from '../Sections/TopMenuSection'
+import { TopMenuSection } from '../Sections/TopMenuSection'
+
 
 const WishListView = () => {
-  window.top.document.title = 'WishList | Fixxo.'
+  // window.top.document.title = 'WishList | Fixxo.'
   return (
     <>
     <TopMenuSection />

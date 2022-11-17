@@ -3,9 +3,11 @@ import { NavLink } from 'react-router-dom'
 import MenuIcon from '../Components/MenuIcon'
 
 
+
+
 const TopMenuSection: React.FC = () => {
 
-    TopMenuSection: any []
+  
 
     return (
   
@@ -23,8 +25,8 @@ const TopMenuSection: React.FC = () => {
                       <span className="social-media">
                           <MenuIcon link="/search" icon="fa-sharp fa-solid fa-magnifying-glass"/>
                           <MenuIcon link="/compare" icon="fa-solid fa-code-compare fa-flip-horizontal"/>
-                          <MenuIcon quantity="3" link="/wishlist" icon="fa-regular fa-heart"/>
-                          <MenuIcon quantity="6" link="/shoppingcart" icon="fa-solid fa-bag-shopping"/>
+                          <MenuIcon quantity={3} link="/wishlist" icon="fa-regular fa-heart"/>
+                          <MenuIcon quantity={6} link="/shoppingcart" icon="fa-solid fa-bag-shopping"/>
                       </span>    
                   </div>
               </div>

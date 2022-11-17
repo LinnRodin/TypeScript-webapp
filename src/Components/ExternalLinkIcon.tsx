@@ -1,5 +1,11 @@
 import React from 'react'
 
+interface Props{
+  link: string
+  icon: string
+
+}
+
 const ExternalLinkIcon = ({link, icon}) => {
   return (
     <a href={link} target="_blank">
