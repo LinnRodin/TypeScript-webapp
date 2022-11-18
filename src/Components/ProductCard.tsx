@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Product } from '../Models/Product'
 
 interface IProductCardProps {
 
   product: Product
   
 }
-
 
 
 const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => {
