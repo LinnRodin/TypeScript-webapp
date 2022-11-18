@@ -2,14 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import MenuIcon from '../Components/MenuIcon'
 
-interface Props {
 
 
 
-}
-
-
-const TopMenuSection: React.FC<Props> = () => {
+const TopMenuSection: React.FC = () => {
 
   
 
@@ -39,5 +35,5 @@ const TopMenuSection: React.FC<Props> = () => {
     )
   }
   
-  export const TopMenuSection
+  export default TopMenuSection
 
