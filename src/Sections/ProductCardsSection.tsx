@@ -1,5 +1,7 @@
 import React from 'react'
 import ProductCard from '../Components/ProductCard'
+import {Product} from '../Models/Product'
+
 
 interface IProductCardProps {
     title: string
