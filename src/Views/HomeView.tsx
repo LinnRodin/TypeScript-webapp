@@ -18,6 +18,8 @@ const HomeView = () => {
 
     useEffect (()=> {
     fetchFeaturedProducts()
+    fetchFlashProducts()
+    fetchSaleProducts()
 
   
    },[]) 

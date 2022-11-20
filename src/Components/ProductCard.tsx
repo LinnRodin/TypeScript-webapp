@@ -5,23 +5,22 @@ import { Product } from '../Models/Product'
 interface IProductCardProps {
 
   product: Product
-  
-}
 
+}
 
 const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => {
 
-  // const addToWishlist = (e) => {
+  // const addToWishlist = (e) =>  void{
   //   console.log(`${e} added to wish list`)
   // }
 
-  // const addToCompare = (e) => {
+  // const addToCompare = (e) => void{
   //   console.log(`${e} added to compare`)
   // }
 
-  // const addToCart = (e) => {
-  //   console.log(`${e} added to shopping cart`)
-  // }
+  //  const addToCart = (e) => void{
+  //    console.log(`${e} added to shopping cart`)
+  //  }
 
   return (
           <section className="new-arrivals">

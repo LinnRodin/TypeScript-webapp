@@ -1,13 +1,13 @@
 import React from 'react'
 
-interface Props {
+interface IMap {
  
-  allowFullScreen?: boolean
+  allowFullScreen: boolean
 
 }
 
 
-const MapSection: React.FC<Props> = () => {
+const MapSection: React.FC<IMap> = () => {
   return (
 
     

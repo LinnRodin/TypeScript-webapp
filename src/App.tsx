@@ -13,7 +13,7 @@ import ShoppingCartView from './Views/ShoppingCartView';
 import NotFoundView from './Views/NotFoundView';
 import { ProductProvider } from './Contexts/ProductContext';
 
-function App() {
+const App: React.FC = () => {
 
 
   return (

@@ -1,9 +1,10 @@
 import React from 'react'
 import ProductCard from '../Components/ProductCard'
+import { Product } from '../Models/Product'
 
 interface IFlashSale2CardsProps {
-
-  products: product[]
+  
+  products: Product[]
 }
 
 const FlashSale2Cards: React.FC<IFlashSale2CardsProps> = ({ products = []}) => {

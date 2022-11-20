@@ -1,16 +1,24 @@
 import React, { useState } from 'react'
 import { submitData, validate } from '../Assets/scripts/ContactFormValidation'
+// import { userModel } from '../Models/userModel'
 
-interface TodoContextType {
-     
-    setTodo: React.Dispatch<React.SetStateAction<string>>
-    handleSubmit: (e:React.FormEvent) => void
+export interface IContactFormSectionProps  {
+    id: string
+    comments: string
+    name: string
+    email: string   
+    password: string
+   
+   
+//    setTodo: React.Dispatch<React.SetStateAction<string>>
+   handleSubmit: (e: React.FormEvent) => void
+   handleChange: (e: React.FormEvent) => void
+   
     
 }
 
 
-
-const ContactFormSection = () => {
+export const ContactFormSection: React.FC <IContactFormSectionProps> = () => {
   let currentPage = "Contact Us"
   document.title = `${currentPage} || Fixxo` 
 
@@ -22,7 +30,7 @@ const ContactFormSection = () => {
     const [submitted, setSubmitted] = useState(false)
     const [failedSubmit, setFailedSubmit] = useState(false)
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.FormEvent) => {
         const {id, value} = e.target
 
         switch(id) {
@@ -40,7 +48,7 @@ const ContactFormSection = () => {
         setErrors({...errors, [id]: validate(e)})
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setFailedSubmit(false)
         setSubmitted(false)
