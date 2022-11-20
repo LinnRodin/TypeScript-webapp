@@ -11,17 +11,17 @@ interface IProductCardProps {
 
 const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => {
 
-  const addToWishlist = (e) => {
-    console.log(`${e} added to wish list`)
-  }
+  // const addToWishlist = (e) => {
+  //   console.log(`${e} added to wish list`)
+  // }
 
-  const addToCompare = (e) => {
-    console.log(`${e} added to compare`)
-  }
+  // const addToCompare = (e) => {
+  //   console.log(`${e} added to compare`)
+  // }
 
-  const addToCart = (e) => {
-    console.log(`${e} added to shopping cart`)
-  }
+  // const addToCart = (e) => {
+  //   console.log(`${e} added to shopping cart`)
+  // }
 
   return (
           <section className="new-arrivals">
@@ -35,7 +35,7 @@ const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => 
                                     <li><button onClick={addToCart} type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-solid fa-bag-shopping"></i></a></button></li> 
                                 </ul>
                                 <div className="card-general">
-                                    <NavLink to={`/products/${product.id}`}>
+                                    <NavLink to={`/products/${product.articleNumber}`}>
                                       <button type= "button" className="btn special_button">
                                         QUICK VIEW</button>
                                     </NavLink>

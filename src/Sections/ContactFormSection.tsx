@@ -1,9 +1,19 @@
 import React, { useState } from 'react'
 import { submitData, validate } from '../Assets/scripts/ContactFormValidation'
 
+interface TodoContextType {
+     
+    setTodo: React.Dispatch<React.SetStateAction<string>>
+    handleSubmit: (e:React.FormEvent) => void
+    
+}
+
+
+
 const ContactFormSection = () => {
   let currentPage = "Contact Us"
-  window.top.document.title = `${currentPage} || Fixxo` 
+  document.title = `${currentPage} || Fixxo` 
+
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -61,7 +71,7 @@ const ContactFormSection = () => {
         }
     }
 
- 
+
 
     return (     
         <section className="contact-form">

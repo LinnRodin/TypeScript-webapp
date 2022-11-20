@@ -1,18 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useEffect } from 'react'
 import TopMenuSection from '../Sections/TopMenuSection'
 import ShowCaseSection from '../Sections/ShowCaseSection'
 import ProductCardsSection from '../Sections/ProductCardsSection'
 import ShowCase2Section from '../Sections/ShowCase2Section'
 import FooterSection from '../Sections/FooterSection'
-import {ProductContext} from '../Contexts/contexts'
 import FlashSaleCards from '../Sections/FlashSaleCards'
 import FlashSale2Cards from '../Sections/FlashSale2Cards'
 import InfoBoxesSection from '../Sections/InfoBoxesSection'
+import { useProductContext } from '../Contexts/ProductContext'
 
 const HomeView = () => {
     document.title = 'Fixxo.'
+
+    const {FeaturedProducts, fetchFeaturedProducts} = useProductContext()
+    const {FlashProducts, fetchFlashProducts} = useProductContext()
+    const {SaleProducts, fetchSaleProducts} = useProductContext()
+
+    useEffect (()=> {
+    fetchFeaturedProducts()
+
   
-  const productContext = useContext(ProductContext)
+   },[]) 
+
 
   return (
     <>
@@ -20,10 +29,10 @@ const HomeView = () => {
         <TopMenuSection />
       </header>
       <ShowCaseSection />
-      <ProductCardsSection title="Featured Products" products={productContext.featuredProducts} />
+      <ProductCardsSection title="Featured Products" products={FeaturedProducts} />
       <ShowCase2Section />
-      <FlashSaleCards products={productContext.flashProducts} />
-      <FlashSale2Cards products={productContext.saleProducts} />
+      <FlashSaleCards products={FlashProducts} /> 
+      <FlashSale2Cards products={SaleProducts} /> 
       <InfoBoxesSection />
       <FooterSection />
     </>  
@@ -32,3 +41,4 @@ const HomeView = () => {
 }
 
 export default HomeView
+
