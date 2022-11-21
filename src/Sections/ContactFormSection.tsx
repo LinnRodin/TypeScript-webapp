@@ -1,24 +1,17 @@
 import React, { useState } from 'react'
 import { submitData, validate } from '../Assets/scripts/ContactFormValidation'
-// import { userModel } from '../Models/userModel'
 
-export interface IContactFormSectionProps  {
+
+export interface IForm {
     id: string
     comments: string
     name: string
     email: string   
     password: string
-   
-   
-//    setTodo: React.Dispatch<React.SetStateAction<string>>
-   handleSubmit: (e: React.FormEvent) => void
-   handleChange: (e: React.FormEvent) => void
-   
-    
 }
 
 
-export const ContactFormSection: React.FC <IContactFormSectionProps> = () => {
+const ContactFormSection: React.FC <IForm> = () => {
   let currentPage = "Contact Us"
   document.title = `${currentPage} || Fixxo` 
 
@@ -26,12 +19,12 @@ export const ContactFormSection: React.FC <IContactFormSectionProps> = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comments, setComments] = useState('')
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState([])
     const [submitted, setSubmitted] = useState(false)
     const [failedSubmit, setFailedSubmit] = useState(false)
 
-    const handleChange = (e: React.FormEvent) => {
-        const {id, value} = e.target
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {id, value} = e.currentTarget
 
         switch(id) {
             case 'name':
@@ -48,7 +41,7 @@ export const ContactFormSection: React.FC <IContactFormSectionProps> = () => {
         setErrors({...errors, [id]: validate(e)})
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setFailedSubmit(false)
         setSubmitted(false)
@@ -64,7 +57,7 @@ export const ContactFormSection: React.FC <IContactFormSectionProps> = () => {
             setName('')
             setEmail('')
             setComments('')
-            setErrors({})
+            setErrors([])
                         
             if(await submitData('https://win22-webapi.azurewebsites.net/api/contactform','POST', json)) {
                 setSubmitted(true)

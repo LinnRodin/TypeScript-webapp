@@ -1,10 +1,20 @@
 
 
-export interface IForm {
-    id: string
-    comments: string
-    name: string
-    email: string   
+export interface User {
+    id: number
+    firstName: string
+    lastName: string
+    email: string
+}
+
+export interface UserNew {
+    firstName: string
+    lastName: string
+    email: string
     password: string
 }
 
+export interface UserSignIn {
+    email: string
+    password: string
+}
