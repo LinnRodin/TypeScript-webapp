@@ -17,6 +17,13 @@ export const submitData = async (url, method, data, contentType = 'application/j
 }
 
 
+export interface Iform {
+    name: string | null;
+    email: string | null;
+    comments: string | null;
+}
+
+
 export const validate = (e, form = null) => {
     if (e.type === 'submit') {
      const errors = {}

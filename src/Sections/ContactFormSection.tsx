@@ -3,10 +3,10 @@ import { submitData, validate } from '../Assets/scripts/ContactFormValidation'
 
 
 export interface IForm {
-    id: string
-    comments: string
-    name: string
-    email: string   
+    id: string,
+    comments: string,
+    name: string,
+    email: string,   
     password: string
 }
 
@@ -19,7 +19,7 @@ const ContactFormSection: React.FC <IForm> = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comments, setComments] = useState('')
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<IForm>([]) 
     const [submitted, setSubmitted] = useState(false)
     const [failedSubmit, setFailedSubmit] = useState(false)
 
