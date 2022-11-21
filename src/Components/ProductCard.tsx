@@ -15,12 +15,12 @@ const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => 
   // }
 
   // const addToCompare = (e) => void{
-  //   console.log(`${e} added to compare`)
+  //   console.log(`${e} added to compare`)  Kommentar: OnClick borttaget då jag ej gör VG delen men sparade koden som en kommentar för att minnas. 
   // }
 
   //  const addToCart = (e) => void{
   //    console.log(`${e} added to shopping cart`)
-  //  }
+  //  }     
 
   return (
           <section className="new-arrivals">
@@ -29,9 +29,9 @@ const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => 
                         <div className="card">
                               <img className="card-img" src={product.imageName} alt={product.name} />
                                 <ul className="card-menu">
-                                    <li><button onClick={addToWishlist} type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-regular fa-heart"></i></a></button></li> 
-                                    <li><button onClick={addToCompare} type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-solid fa-code-compare fa-flip-horizontal"></i></a></button></li> 
-                                    <li><button onClick={addToCart} type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-solid fa-bag-shopping"></i></a></button></li> 
+                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-regular fa-heart"></i></a></button></li> 
+                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-solid fa-code-compare fa-flip-horizontal"></i></a></button></li> 
+                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-solid fa-bag-shopping"></i></a></button></li> 
                                 </ul>
                                 <div className="card-general">
                                     <NavLink to={`/products/${product.articleNumber}`}>
