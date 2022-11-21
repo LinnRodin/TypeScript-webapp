@@ -1,5 +1,6 @@
+import { IErrors } from "../../Sections/ContactFormSection";
 
-export const submitData = async (url, method, data, contentType = 'application/json') => {
+export const submitData = async (url: string, method: string, data: any, contentType = 'application/json') => {
 
     const res = await fetch(url, {
        method: method,
@@ -17,36 +18,45 @@ export const submitData = async (url, method, data, contentType = 'application/j
 }
 
 
-export interface Iform {
-    name: string | null;
-    email: string | null;
-    comments: string | null;
+export interface Ivalidate {
+    name?: string | null;
+    email?: string | null;
+    comments?: string | null;
+}
+interface IForm {
+    name: string
+    email: string
+    comments: string
 }
 
 
-export const validate = (e, form = null) => {
+export const validate = (e: any, form: IForm | null) => {
+    let errors : IErrors = { name: null, email: null, comments: null}
     if (e.type === 'submit') {
-     const errors = {}
-     errors.name = validate_name(form.name)
-     errors.email = validate_email(form.email)
-     errors.comments = validate_comments(form.comments)
-     return errors
- 
+     errors.name = validate_name(form!.name)
+     errors.email = validate_email(form!.email)
+     errors.comments = validate_comments(form!.comments)
+     
     } else {
-         const {id, value} = e.target
-         switch(id) {
-             case 'name':
-                 return validate_name(value)
-             case 'email':
-                 return validate_email(value)
-             case 'comments':
-                 return validate_comments(value)
-         }
-    }
+        const {id, value} = e.target
+        switch(id) {
+            case 'name':
+                 errors = {...errors, [id]:validate_name(value)}
+                 break;
+            case 'email':
+                errors = {...errors, [id]:validate_email(value)}
+                 break;
+            case 'comments':
+                errors = {...errors, [id]:validate_comments(value)}
+                 break;
+            }
+        }
+                
+    return errors   
  }
  
  
- const validate_name = (value) => {
+ const validate_name = (value: string) => {
      if (!value)
          return 'A name is required'
      else if (value.length < 2)
@@ -55,7 +65,7 @@ export const validate = (e, form = null) => {
          return null
  }
  
- const validate_email = (value) => {
+ const validate_email = (value: string) => {
      const regex_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
      
      if (!value)
@@ -66,7 +76,7 @@ export const validate = (e, form = null) => {
          return null
  }
  
- const validate_comments = (value) => {
+ const validate_comments = (value: string) => {
      if (!value)
          return 'A comment is required'
      else if (value.length < 5)

@@ -3,11 +3,17 @@ import { submitData, validate } from '../Assets/scripts/ContactFormValidation'
 
 
 export interface IForm {
-    id: string,
-    comments: string,
-    name: string,
-    email: string,   
-    password: string
+    id?: string,
+    comments?: string,
+    name?: string,
+    email?: string,   
+    
+}
+
+export interface IErrors {
+    comments: string |null,
+    name: string |null,
+    email: string |null, 
 }
 
 
@@ -19,11 +25,11 @@ const ContactFormSection: React.FC <IForm> = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comments, setComments] = useState('')
-    const [errors, setErrors] = useState<IForm>([]) 
+    const [errors, setErrors] = useState<IErrors>() 
     const [submitted, setSubmitted] = useState(false)
     const [failedSubmit, setFailedSubmit] = useState(false)
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: any) => {
         const {id, value} = e.currentTarget
 
         switch(id) {
@@ -38,7 +44,7 @@ const ContactFormSection: React.FC <IForm> = () => {
                 break
         }
 
-        setErrors({...errors, [id]: validate(e)})
+        setErrors(validate(e, null))
     }
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,14 +56,14 @@ const ContactFormSection: React.FC <IForm> = () => {
 
 
 
-        if (errors.name === null && errors.email === null && errors.comments === null) {
+        if (errors!.name === null && errors!.email === null && errors!.comments === null) {
         
             let json = JSON.stringify({ name, email, comments })
         
             setName('')
             setEmail('')
             setComments('')
-            setErrors([])
+            setErrors({ name: null, email: null, comments: null})
                         
             if(await submitData('https://win22-webapi.azurewebsites.net/api/contactform','POST', json)) {
                 setSubmitted(true)
@@ -96,16 +102,16 @@ const ContactFormSection: React.FC <IForm> = () => {
                 <h2>Come in contact with us</h2>
                 <form onSubmit={handleSubmit} noValidate>
                     <div>
-                        <input id="name" className={(errors.name ? 'error': '')} value={name} onChange={handleChange} type="text" placeholder="Your Name" />
-                        <div className="errorMessage">{errors.name}</div>
+                        <input id="name" className={(errors?.name ? 'error': '')} value={name} onChange={handleChange} type="text" placeholder="Your Name" />
+                        <div className="errorMessage">{errors?.name}</div>
                     </div>
                     <div>
-                        <input id="email" className={(errors.email ? 'error': '')} value={email} onChange={handleChange} type="email" placeholder="Your Mail" />
-                        <div className="errorMessage">{errors.email}</div>
+                        <input id="email" className={(errors?.email ? 'error': '')} value={email} onChange={handleChange} type="email" placeholder="Your Mail" />
+                        <div className="errorMessage">{errors?.email}</div>
                     </div>
                     <div className="textarea">
-                        <textarea id="comments" className={(errors.comments ? 'error': '')} style={(errors.comments ? {border: '1px solid #FF7373'}: {} )} value={comments} onChange={handleChange} placeholder="Comments"></textarea>
-                        <div className="errorMessage">{errors.comments}</div>
+                        <textarea id="comments" className={(errors?.comments ? 'error': '')} style={(errors?.comments ? {border: '1px solid #FF7373'}: {} )} value={comments} onChange={handleChange} placeholder="Comments"></textarea>
+                        <div className="errorMessage">{errors?.comments}</div>
                     </div>
                     <div>
                         <button type="submit" className="btn-theme">
