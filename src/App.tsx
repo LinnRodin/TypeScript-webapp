@@ -13,14 +13,17 @@ import ShoppingCartView from './Views/ShoppingCartView';
 import NotFoundView from './Views/NotFoundView';
 import { ProductProvider } from './Contexts/ProductContext';
 import UserProvider from './Contexts/UserContext';
+import CreateProductProvider from './Contexts/ProductsFormContext';
+import CreateFormView from './Views/CreateFormView';
 
 const App: React.FC = () => {
 
 
   return (
     <BrowserRouter>
-    <UserProvider>
-      <ProductProvider>
+      <UserProvider>
+      <CreateProductProvider>
+      <ProductProvider> 
         <Routes>
          <Route path="/" element={<HomeView /> } /> 
           <Route path="/products" element={<ProductsView /> } /> 
@@ -32,8 +35,10 @@ const App: React.FC = () => {
           <Route path="/wishlist" element={<WishListView /> } />
           <Route path="/shoppingcart" element={<ShoppingCartView /> } /> 
           <Route path="*" element={<NotFoundView /> } /> 
+          <Route path="Login" element={<CreateFormView /> } /> 
         </Routes>
-        </ProductProvider>
+        </ProductProvider> 
+        </CreateProductProvider>
         </UserProvider>
     </BrowserRouter>
   

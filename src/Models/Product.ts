@@ -1,10 +1,13 @@
+
 export interface Product {
-  articleNumber: string
+  
+  articleNumber: string 
   name: string
   description: string
   category: string 
-  rating: number
+  rating?: number
   imageName: string
   price?: number
+ 
   
 }

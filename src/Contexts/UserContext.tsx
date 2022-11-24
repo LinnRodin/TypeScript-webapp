@@ -1,5 +1,5 @@
 import React, {useState, useContext, createContext} from 'react'
-import { User, UserRequest } from '../Models/userModel'
+import { User, UserRequest } from '../Models/UserModel'
 import { UserProviderProps } from '../Models/UserProviderPropsModel'
 
 

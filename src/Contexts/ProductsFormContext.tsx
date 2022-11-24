@@ -1,6 +1,6 @@
 import React, {useState, useContext, createContext} from 'react'
-import {Product, ProductRequest } from '../models/ProductsUpdateModel'
-import { ProductProviderProps } from '../models/ProductProviderModel'
+import {Product, ProductRequest } from '../Models/ProductModel'
+import { ProductProviderProps } from '../Models/ProductProviderProps'
 
 export interface IProductsUpdateContext {
     product: Product
@@ -22,7 +22,7 @@ export interface IProductsUpdateContext {
 export const ProductsFormContext = createContext<IProductsUpdateContext | null>(null)
 export const useProductsUpdateContext = () => { return useContext(ProductsFormContext)}
 
-const ProductsUpdateProvider = ({children} : ProductProviderProps) => {
+const CreateProductProvider = ({children} : ProductProviderProps) => {
 
     const baseUrl = 'http://localhost:5000/api/products'
     const product_default: Product = {articleNumber: 0, category: '', imageURL: '', title: '', description: '', price: 0}
@@ -109,4 +109,4 @@ const ProductsUpdateProvider = ({children} : ProductProviderProps) => {
     )
 }
 
-export default ProductsUpdateProvider
+export default CreateProductProvider
