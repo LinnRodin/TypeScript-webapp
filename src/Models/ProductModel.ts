@@ -1,6 +1,6 @@
 
 export interface ProductRequest {
-    
+   
     imageURL?: string
     category?: string 
     rating?: string
