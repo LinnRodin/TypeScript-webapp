@@ -2,7 +2,7 @@ import React, {useState, useContext, createContext} from 'react'
 import {Product, ProductRequest } from '../Models/ProductModel'
 import { ProductProviderProps } from '../Models/ProductProviderProps'
 
-export interface IProductsUpdateContext {
+export interface IProductsContext {
     product: Product
     productRequest: ProductRequest
     setProduct: React.Dispatch<React.SetStateAction<Product>>
@@ -19,7 +19,7 @@ export interface IProductsUpdateContext {
 }
 
 
-export const ProductsFormContext = createContext<IProductsUpdateContext | null>(null)
+export const ProductsFormContext = createContext<IProductsContext | null>(null)
 export const useProductsUpdateContext = () => { return useContext(ProductsFormContext)}
 
 const CreateProductProvider = ({children} : ProductProviderProps) => {

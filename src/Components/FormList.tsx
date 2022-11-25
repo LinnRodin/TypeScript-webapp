@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { IProductsUpdateContext, ProductsFormContext } from '../Contexts/ProductsFormContext'
-import { ProductRequest } from '../Models/ProductModel'
+import { IProductsContext, ProductsFormContext } from '../Contexts/ProductsFormContext'
+import { Product } from '../Models/ProductModel'
 
 
 const FormList = () => {
-    const { ProductRequest, getAll } = React.useContext(ProductsFormContext) as IProductsUpdateContext
+    const { Product, getAll } = React.useContext(ProductsFormContext) as IProductsContext
 
     useEffect(() => {
         getAll()
@@ -16,7 +16,7 @@ const FormList = () => {
         <>
             <h3 className="display-6 mb-4">ADD PRODUCT</h3>
             {
-                ProductRequest.map((ProductRequest: ProductRequest) => (<div key={ProductRequest.imageURL} className="mb-3">{ProductRequest.title} {ProductRequest.description}</div>))
+                Product.map((Product: Product) => (<div key={Product.articleNumber} className="mb-3">{Product.description} {Product.title}</div>))
             }
     
         </>
