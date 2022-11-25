@@ -4,7 +4,7 @@ import { Product } from '../Models/ProductModel'
 
 
 const FormList = () => {
-    const { Product, getAll } = React.useContext(ProductsFormContext) as IProductsContext
+    const { products, getAll } = React.useContext(ProductsFormContext) as IProductsContext
 
     useEffect(() => {
         getAll()
@@ -16,7 +16,7 @@ const FormList = () => {
         <>
             <h3 className="display-6 mb-4">ADD PRODUCT</h3>
             {
-                Product.map((Product: Product) => (<div key={Product.articleNumber} className="mb-3">{Product.description} {Product.title}</div>))
+                products.map((product: Product) => (<div key={product.articleNumber} className="mb-3">{product.description} {product.title}</div>))
             }
     
         </>
