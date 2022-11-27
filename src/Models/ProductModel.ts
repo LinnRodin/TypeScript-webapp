@@ -6,7 +6,7 @@ export interface ProductRequest {
     rating?: string
     title?: string
     description?: string
-    price?: number
+    price: number
   
 }
 
@@ -18,7 +18,7 @@ export interface Product {
     rating?: string
     title?: string
     description?: string
-    price?: number
+    price: number
     
 
   }
