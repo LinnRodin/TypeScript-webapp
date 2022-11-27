@@ -1,13 +1,13 @@
 import React from 'react'
 import CreateForm from '../Components/CreateForm'
-import FormList from '../Components/Formlist'
+import ProductList from '../Components/ProductList'
 
 const CreateFormView = () => {
   return (
     <div className="container mt-5">
         <CreateForm />
         <hr className="my-5" />
-        <FormList />
+        <ProductList />
     </div>
   )
 }
