@@ -9,7 +9,7 @@ import FlashSale2Cards from '../Sections/FlashSale2Cards'
 import InfoBoxesSection from '../Sections/InfoBoxesSection'
 import { useProductContext } from '../Contexts/ProductContext'
 
-const HomeView = () => {
+const HomeView: React.FC =  () => {
     document.title = 'Fixxo.'
 
     const {FeaturedProducts, fetchFeaturedProducts} = useProductContext()

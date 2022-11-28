@@ -3,7 +3,7 @@ import FooterSection from '../Sections/FooterSection'
 import TopMenuSection from '../Sections/TopMenuSection'
 import UnderConstruction from '../Assets/Images/UnderConstruction.jpg'
 
-const CategoriesView = () => {
+const CategoriesView: React.FC = () => {
   document.title = 'Categories | Fixxo.'
   return (
     <>

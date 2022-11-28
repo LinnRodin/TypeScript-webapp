@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import FooterSection from '../Sections/FooterSection'
 import TopMenuSection from '../Sections/TopMenuSection'
 
-const ProductDetailsView = () => {
+const ProductDetailsView: React.FC = () => {
   document.title = 'Products | Fixxo.'
 
 const params = useParams()

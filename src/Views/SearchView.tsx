@@ -3,7 +3,7 @@ import FooterSection from '../Sections/FooterSection'
 import TopMenuSection from '../Sections/TopMenuSection'
 
 
-const SearchView = () => {
+const SearchView: React.FC = () => {
   document.title = 'Search | Fixxo.'
   return (
     <>

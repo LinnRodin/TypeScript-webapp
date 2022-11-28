@@ -13,7 +13,7 @@ export interface ProductRequest {
 export interface Product {
    
     imageURL?: string
-    articleNumber?: number|string
+    articleNumber?: string
     category?: string 
     rating?: string
     title?: string

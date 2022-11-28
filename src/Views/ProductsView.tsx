@@ -5,7 +5,7 @@ import ProductCardsSection from '../Sections/ProductCardsSection'
 import FooterSection from '../Sections/FooterSection'
 import { useProductContext } from '../Contexts/ProductContext'
 
-const ProductsView = () => {
+const ProductsView: React.FC = () => {
    document.title = 'Products | Fixxo.'
   
    const {AllProducts, fetchAllProducts} = useProductContext()

@@ -2,7 +2,7 @@ import React from 'react'
 import FooterSection from '../Sections/FooterSection'
 import TopMenuSection from '../Sections/TopMenuSection'
 
-const ShoppingCartView = () => {
+const ShoppingCartView: React.FC = () => {
   document.title = 'ShoppingCart | Fixxo.'
   return (
     <>
