@@ -35,7 +35,7 @@ const App: React.FC = () => {
           <Route path="/wishlist" element={<WishListView /> } />
           <Route path="/shoppingcart" element={<ShoppingCartView /> } /> 
           <Route path="*" element={<NotFoundView /> } /> 
-          <Route path="Login" element={<CreateFormView /> } /> 
+          <Route path="/Admin" element={<CreateFormView /> } /> 
         </Routes>
         </ProductProvider> 
         </CreateProductProvider>

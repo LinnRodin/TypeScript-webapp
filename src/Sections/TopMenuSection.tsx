@@ -20,7 +20,7 @@ const TopMenuSection: React.FC = () => {
                       <NavLink className="a" to="/categories" end>Categories</NavLink>
                       <NavLink className="a" to="/products">Products</NavLink>
                       <NavLink className="a" to="/contacts" end>Contacts</NavLink>
-                      <NavLink className="a" to="/Login" end>Login</NavLink> 
+                      <NavLink className="a" to="/Admin" end>Admin</NavLink> 
                   </div>
                   <div>
                       <span className="social-media">
