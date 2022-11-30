@@ -11,7 +11,7 @@ const CreateFormView: React.FC = () => {
         <UpdateForm />
         <hr className="my-5" />
         <ProductList />
-        <ProductRequestList />
+        {/* <ProductRequestList /> */}
     </div>
   )
 }

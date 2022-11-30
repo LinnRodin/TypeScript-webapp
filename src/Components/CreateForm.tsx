@@ -14,7 +14,6 @@ const CreateForm = () => {
       <input value={productRequest.description} onChange={(e) => setProductRequest({...productRequest, description: e.target.value})} type="text" className="form-control py-2 mb-3" placeholder='Enter description...' />
       <input value={productRequest.price} onChange={(e) => setProductRequest({...productRequest, price: e.target.valueAsNumber})} type="number" className="form-control py-2 mb-3" placeholder='Enter price...' /> 
       <button type='submit' className='btn btn-success'>ADD</button>
-      <button type='submit' className='btn btn-success'>DELETE</button>
     </form>
   )
 }

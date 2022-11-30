@@ -35,24 +35,29 @@ const CreateProductProvider = ({children} : ProductProviderProps) => {
     const create = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        const result = await fetch(`${baseUrl}`, {
+        try  {
+            const result = await fetch(`${baseUrl}`, {
 
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(productRequest)
-
-        
-        })
-
-        if (result.status === 201) {
-            setProductRequest(product_default)
-          
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productRequest)
+    
             
+            })
+    
+            if (result.status !== 201) {
+                throw new Error(result.statusText)
+                
+            }
+            setProductRequest(product_default)
         }
-        else
-        console.log('error')
+        catch(err) {
+
+            console.log(err)
+        }
+        
     }
 
    

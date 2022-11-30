@@ -15,7 +15,6 @@ const UpdateForm = () => {
       <input value={product.description} onChange={(e) => setProduct({...product, description: e.target.value})} type="text" className="form-control py-2 mb-3" placeholder='Enter description...' />
       <input value={product.price} onChange={(e) => setProduct({...product, price: e.target.valueAsNumber})} type="number" className="form-control py-2 mb-3" placeholder='Enter price...' /> 
       <button type='submit' className='btn btn-success'>EDIT</button>
-      <button type='submit' className='btn btn-success'>DELETE</button>
     </form>
   )
 }
