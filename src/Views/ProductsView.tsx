@@ -3,23 +3,23 @@ import TopMenuSection from '../Sections/TopMenuSection'
 import BreadCrumbSection from '../Sections/BreadCrumbSection'
 import ProductCardsSection from '../Sections/ProductCardsSection'
 import FooterSection from '../Sections/FooterSection'
-import { useProductContext } from '../Contexts/ProductContext'
+import { IProductContextType, useProductContext } from '../Contexts/ProductContext'
 
 const ProductsView: React.FC = () => {
    document.title = 'Products | Fixxo.'
   
-   const {AllProducts, fetchAllProducts} = useProductContext()
+   const {products, getAll} = useProductContext() as IProductContextType
 
    useEffect (()=> {
-    fetchAllProducts()
+    getAll(12)
   
-   },[fetchAllProducts]) 
+   },[]) 
 
   return (
     <>
       <TopMenuSection />
       <BreadCrumbSection currentPage="Products"/>
-      <ProductCardsSection title="Products" products={AllProducts} />
+      <ProductCardsSection title="Products" products={products} />
       <FooterSection />
     </>  
   )

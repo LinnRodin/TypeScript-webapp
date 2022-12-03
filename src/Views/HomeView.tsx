@@ -4,22 +4,20 @@ import ShowCaseSection from '../Sections/ShowCaseSection'
 import ProductCardsSection from '../Sections/ProductCardsSection'
 import ShowCase2Section from '../Sections/ShowCase2Section'
 import FooterSection from '../Sections/FooterSection'
-import FlashSaleCards from '../Sections/FlashSaleCards'
-import FlashSale2Cards from '../Sections/FlashSale2Cards'
+// import FlashSaleCards from '../Sections/FlashSaleCards'
+// import FlashSale2Cards from '../Sections/FlashSale2Cards'
 import InfoBoxesSection from '../Sections/InfoBoxesSection'
-import { useProductContext } from '../Contexts/ProductContext'
+import { IProductContextType, useProductContext } from '../Contexts/ProductContext'
 
 const HomeView: React.FC =  () => {
     document.title = 'Fixxo.'
 
-    const {FeaturedProducts, fetchFeaturedProducts} = useProductContext()
-    const {FlashProducts, fetchFlashProducts} = useProductContext()
-    const {SaleProducts, fetchSaleProducts} = useProductContext()
+    const {featured, getFeatured} = useProductContext() as IProductContextType
+    
 
     useEffect (()=> {
-    fetchFeaturedProducts()
-    fetchFlashProducts()
-    fetchSaleProducts()
+    getFeatured(8)
+  
 
   
    },[]) 
@@ -31,10 +29,10 @@ const HomeView: React.FC =  () => {
         <TopMenuSection />
       </header>
       <ShowCaseSection />
-      <ProductCardsSection title="Featured Products" products={FeaturedProducts} />
+      <ProductCardsSection title="Featured Products" products={featured} />
       <ShowCase2Section />
-      <FlashSaleCards products={FlashProducts} /> 
-      <FlashSale2Cards products={SaleProducts} /> 
+      {/* <FlashSaleCards products={FlashProducts} /> 
+      <FlashSale2Cards products={SaleProducts} />  */}
       <InfoBoxesSection />
       <FooterSection />
     </>  
