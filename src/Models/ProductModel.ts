@@ -19,6 +19,7 @@ export interface Product {
     title?: string
     description?: string
     price: number
-    
+    name: string
+    tag: string
 
   }

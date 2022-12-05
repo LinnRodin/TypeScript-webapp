@@ -1,7 +1,7 @@
 import React from 'react'
 import ExternalLinkIcon from '../Components/ExternalLinkIcon'
 
-const FooterSection = () => {
+const FooterSection: React.FC = () => {
   return (
    
     <footer>

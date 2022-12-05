@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductCard from '../Components/ProductCard'
-import {Product} from '../Models/Product'
+import { useProductContext, IProductContextType } from '../Contexts/ProductContext'
+import {Product} from '../Models/ProductModel'
 
 
 interface IProductCardProps {
@@ -9,8 +10,8 @@ interface IProductCardProps {
 }
 
 
-const ProductCardsSection: React.FC<IProductCardProps> = ({title = "", products = []}) => {
-    
+const ProductCardsSection: React.FC<IProductCardProps> = ({title=""}) => {
+    const {products} = useProductContext() as IProductContextType
   
     return (
         <section className="new-arrivals">
@@ -20,7 +21,7 @@ const ProductCardsSection: React.FC<IProductCardProps> = ({title = "", products 
                 </div>
                 <div className="grid">
                  {
-                    products.map( product => <ProductCard key={product.articleNumber} product={product} />)
+                    products.map( (product:Product) => <ProductCard key={product.articleNumber} product={product} />)
                  } 
                 </div>
             </div>                   

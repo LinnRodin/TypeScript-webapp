@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Product } from '../Models/Product'
+import { Product } from '../Models/ProductModel'
 
 interface IProductCardProps {
 
@@ -27,11 +27,11 @@ const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => 
                 <div className="container">
                     <div className="grid">
                         <div className="card">
-                              <img className="card-img" src={product.imageName} alt={product.name} />
+                              <img className="card-img" src={product.imageURL} alt={product.name} />
                                 <ul className="card-menu">
-                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-regular fa-heart"></i></a></button></li> 
-                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-solid fa-code-compare fa-flip-horizontal"></i></a></button></li> 
-                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><a href = "#"><i className="fa-solid fa-bag-shopping"></i></a></button></li> 
+                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><i className="fa-regular fa-heart"></i></button></li> 
+                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><i className="fa-solid fa-code-compare fa-flip-horizontal"></i></button></li> 
+                                    <li><button type="button" className="btn btn-light btn-circle btn-sm"><i className="fa-solid fa-bag-shopping"></i></button></li> 
                                 </ul>
                                 <div className="card-general">
                                     <NavLink to={`/products/${product.articleNumber}`}>

@@ -13,7 +13,7 @@ const ProductsView: React.FC = () => {
    useEffect (()=> {
     getAll(12)
   
-   },[]) 
+   },[getAll]) 
 
   return (
     <>

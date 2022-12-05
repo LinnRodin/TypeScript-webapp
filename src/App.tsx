@@ -11,10 +11,9 @@ import CompareView from './Views/CompareView';
 import WishListView from './Views/WishListView';
 import ShoppingCartView from './Views/ShoppingCartView';
 import NotFoundView from './Views/NotFoundView';
-// import ProductProvider  from './Contexts/ProductContext';
 import UserProvider from './Contexts/UserContext';
-import CreateProductProvider from './Contexts/ProductsFormContext';
 import CreateFormView from './Views/CreateFormView';
+import ProductProvider from './Contexts/ProductContext';
 
 const App: React.FC = () => {
 
@@ -22,8 +21,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <UserProvider>
-      <CreateProductProvider>
-      {/* <ProductProvider>  */}
+      <ProductProvider>
         <Routes>
          <Route path="/" element={<HomeView /> } /> 
           <Route path="/products" element={<ProductsView /> } /> 
@@ -37,8 +35,7 @@ const App: React.FC = () => {
           <Route path="*" element={<NotFoundView /> } /> 
           <Route path="/Admin" element={<CreateFormView /> } /> 
         </Routes>
-        {/* </ProductProvider>  */}
-        </CreateProductProvider>
+        </ProductProvider>
         </UserProvider>
     </BrowserRouter>
   

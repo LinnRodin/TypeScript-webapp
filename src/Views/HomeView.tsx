@@ -20,7 +20,7 @@ const HomeView: React.FC =  () => {
   
 
   
-   },[]) 
+   },[getFeatured]) 
 
 
   return (

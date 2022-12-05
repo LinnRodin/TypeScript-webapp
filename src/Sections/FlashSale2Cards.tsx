@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCard from '../Components/ProductCard'
-import { Product } from '../Models/Product'
+import { Product } from '../Models/ProductModel'
 
 interface IFlashSale2CardsProps {
   

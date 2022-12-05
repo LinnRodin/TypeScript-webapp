@@ -1,7 +1,7 @@
 import React from 'react'
 import CreateForm from '../Components/CreateForm'
 import ProductList from '../Components/ProductList'
-import ProductRequestList from '../Components/ProductRequestList'
+//import ProductRequestList from '../Components/ProductRequestList'
 import UpdateForm from '../Components/UpdateForm'
 
 const CreateFormView: React.FC = () => {
