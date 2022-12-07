@@ -35,7 +35,7 @@ export const useProductContext = () => { return useContext (ProductContext)}
 
 export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
     
-    const baseUrl: string = 'http://localhost:5000/api/products'
+    const baseUrl: string = 'http://localhost:5550/api/products'
     const EMPTY_PRODUCT: Product = { tag: '', articleNumber: '', name: '', category: '', price: 0, imageURL: '' } //Hur produkten skall se ut specifikt 
     const EMPTY_PRODUCTREQUEST: ProductRequest = { category: '', imageURL: '', title: '', description: '', price: 0}
 
