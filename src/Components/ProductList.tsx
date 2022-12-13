@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
-import { IProductsContext, ProductsFormContext } from '../Contexts/ProductsFormContext'
+import { IProductContextType , ProductContext } from '../Contexts/ProductContext'
 import { Product } from '../Models/ProductModel'
 
 
 const ProductList = () => {
-    const { products, getAll } = React.useContext(ProductsFormContext) as IProductsContext
+    const { products, getAll } = React.useContext(ProductContext) as IProductContextType 
 
     useEffect(() => {
-        getAll()
+        getAll(4)
 
     }, [getAll])
     

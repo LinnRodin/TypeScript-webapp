@@ -75,7 +75,7 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
 
     const get = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-           const res = await fetch(`${baseUrl}/product/details/${articleNumber}`)   // (http://localhost:5000/api/product/details/$articleNumber)
+           const res = await fetch(`${baseUrl}/details/${articleNumber}`)   // (http://localhost:5550/api/products/details/$articleNumber)
            setProduct(await res.json())
         }
      }

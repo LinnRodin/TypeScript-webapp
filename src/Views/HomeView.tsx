@@ -20,7 +20,7 @@ const HomeView: React.FC =  () => {
   
 
   
-   },[getFeatured]) 
+   },[]) 
 
 
   return (
@@ -31,8 +31,8 @@ const HomeView: React.FC =  () => {
       <ShowCaseSection />
       <ProductCardsSection title="Featured Products" products={featured} />
       <ShowCase2Section />
-      {/* <FlashSaleCards products={FlashProducts} /> 
-      <FlashSale2Cards products={SaleProducts} />  */}
+      {/* <FlashSaleCards products={FlashSaleProducts} /> 
+      <FlashSale2Cards products={FlashSaleProducts} />  */}
       <InfoBoxesSection />
       <FooterSection />
     </>  

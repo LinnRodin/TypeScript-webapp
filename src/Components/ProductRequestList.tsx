@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
-import { IProductsContext, ProductsFormContext } from '../Contexts/ProductsFormContext'
+import { IProductContextType , ProductContext } from '../Contexts/ProductContext'
 import { Product } from '../Models/ProductModel'
 
 
 const ProductRequestList = () => {
-    const { products, getAll } = React.useContext(ProductsFormContext) as IProductsContext
+    const { products, getAll } = React.useContext(ProductContext) as IProductContextType 
 
     useEffect(() => {
-        getAll()
+        getAll(4)
 
     }, [getAll])
     
     
     return (
         <>
-            <h3 className="display-6 mb-4">ADD PRODUCT</h3>
+            <h3 className="display-6 mb-4"></h3>
             {
                 products.map((product: Product) => (<div key={product.articleNumber}className="mb-3">{product.imageURL}{product.title}{product.description}{product.price}</div>))
             }
