@@ -21,7 +21,7 @@ const ProductCardsSection: React.FC<IProductCardProps> = ({title=""}) => {
                 </div>
                 <div className="grid">
                  {
-                    products.map( (product:Product) => <ProductCard key={product.articleNumber} product={product} />)
+                    products.slice(0,12).map( (product:Product) => <ProductCard key={product.articleNumber} product={product} />)
                  } 
                 </div>
             </div>                   

@@ -13,16 +13,19 @@ export interface IProductContextType {
     product: Product
     products: Product[]
     featured: Product[]
+    flashsale: Product[]
 
     setProductRequest: React.Dispatch<React.SetStateAction<ProductRequest>>
     setProduct: React.Dispatch<React.SetStateAction<Product>>
     setProducts: React.Dispatch<React.SetStateAction<Product[]>>
     setFeatured: React.Dispatch<React.SetStateAction<Product[]>>
+    setFlashSaleProducts: React.Dispatch<React.SetStateAction<Product[]>>
 
     create: (e: React.FormEvent) => void
     get: (articleNumber: string) => void
     getAll: (take: number) => void
     getFeatured: (take: number) => void
+    getFlashSaleProducts: (take?: number) => void
     update: (e: React.FormEvent) => void
     remove: (articleNumber: string) => void
 
@@ -43,7 +46,9 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
     const [product, setProduct] = useState<Product>(EMPTY_PRODUCT) //En speciell typ av produkt
     const [products, setProducts] = useState<Product[]>([])
     const [featured, setFeatured] = useState<Product[]>([])
+    const [flashsale, setFlashSaleProducts] = useState<Product[]>([])
 
+    // Create
 
     const create = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -57,7 +62,6 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
                 },
                 body: JSON.stringify(productRequest)
     
-            
             })
     
             if (result.status !== 201) {
@@ -73,32 +77,65 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
         
     }
 
+    // Get
+
     const get = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-           const res = await fetch(`${baseUrl}/details/${articleNumber}`)   // (http://localhost:5550/api/products/details/$articleNumber)
-           setProduct(await res.json())
+            const res = await fetch(`${baseUrl}/details/${articleNumber}`)   // (http://localhost:5550/api/products/details/$articleNumber)
+            setProduct(await res.json())
         }
-     }
+    }
 
-    const getAll = async (take: number = 0) => {
-      let url = baseUrl
 
-      if (take !== 0)
-          url = baseUrl + `?take=${take}`
 
-      const res = await fetch(url)
-      setProducts(await res.json())
-     }
+    // // getAll First vers.
+    // const getAll = async (take: number = 0) => {
+    //   let url = baseUrl
 
+    //   if (take !== 0)
+    //       url = baseUrl + `?take=${take}`
+
+    //   const res = await fetch(url)
+    //   setProducts(await res.json())
+    //  }
+    
+
+    // getAll second vers.
+    
+    const getAll =async () => {
+        const result = await fetch(`${baseUrl}` )
+        
+        if (result.status === 200)
+        setProducts(await result.json())
+    }
+
+
+    // Featured ---> 8 in view 
      const getFeatured = async (take: number = 0) => {
-      let  url = `${baseUrl}/featured`
+      let  url = `${baseUrl}`
 
       if (take !== 0)
-          url += `/${take}`
+          url += `/featured/${take}`
 
       const res = await fetch(url)
       setFeatured(await res.json())
+      
      }
+
+    // FlashSaleProducts ---> 4 in view 
+    const getFlashSaleProducts = async (take: number = 0) => {
+        let  url = `${baseUrl}`
+  
+        if (take !== 0)
+            url += `flashsale${take}`
+  
+        const res = await fetch(url)
+        setFlashSaleProducts(await res.json())
+        
+       } 
+
+
+     //Update
 
      const update =async (e: React.FormEvent) => {
         e.preventDefault()
@@ -111,13 +148,14 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
             },
             body: JSON.stringify(product)
 
-        
         })
 
         if (result.status === 200) {
             setProduct(await result.json())
         }
     }
+
+    //Remove
 
     const remove = async (articleNumber: string) => {
         const result = await fetch(`${baseUrl}/${articleNumber}`, {
@@ -131,7 +169,7 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
      
    
 
-    return <ProductContext.Provider value={{productRequest, product, products, featured, setProductRequest, setProduct, setProducts, setFeatured, create, get, getAll, getFeatured, update, remove }}>
+    return <ProductContext.Provider value={{productRequest, product, products, featured, flashsale, setProductRequest, setProduct, setProducts, setFeatured, setFlashSaleProducts ,create, get, getAll, getFeatured, getFlashSaleProducts, update, remove }}>
         {children}
     </ProductContext.Provider>
 

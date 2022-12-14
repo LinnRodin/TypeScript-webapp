@@ -9,7 +9,7 @@ const ProductList = () => {
     useEffect(() => {
         getAll(4)
 
-    }, [getAll])
+    }, [])
     
     
     return (

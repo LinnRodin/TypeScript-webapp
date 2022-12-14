@@ -12,6 +12,8 @@ const ProductsView: React.FC = () => {
 
    useEffect (()=> {
     getAll(12)
+
+  
   
    },[]) 
 
