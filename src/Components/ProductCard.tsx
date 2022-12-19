@@ -15,7 +15,7 @@ const ProductCard: React.FC<IProductCardProps> = ({product = {} as Product}) => 
   // }
 
   // const addToCompare = (e) => void{
-  //   console.log(`${e} added to compare`)  Kommentar: OnClick borttaget då jag ej gör VG delen men sparade koden som en kommentar för att minnas. 
+  //   console.log(`${e} added to compare`)  Kommentar: OnClick borttaget då jag ej gör VG delen men sparade koden för att minnas. 
   // }
 
   //  const addToCart = (e) => void{

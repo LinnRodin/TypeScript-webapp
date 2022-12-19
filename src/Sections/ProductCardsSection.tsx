@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCard from '../Components/ProductCard'
-import { useProductContext, IProductContextType } from '../Contexts/ProductContext'
+// import { useProductContext, IProductContextType } from '../Contexts/ProductContext'
 import {Product} from '../Models/ProductModel'
 
 
@@ -10,8 +10,8 @@ interface IProductCardProps {
 }
 
 
-const ProductCardsSection: React.FC<IProductCardProps> = ({title=""}) => {
-    const {products} = useProductContext() as IProductContextType
+const ProductCardsSection: React.FC<IProductCardProps> = ({title="", products}) => {
+    // const {products} = useProductContext() as IProductContextType
   
     return (
         <section className="new-arrivals">

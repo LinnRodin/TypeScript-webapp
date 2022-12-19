@@ -8,9 +8,9 @@ const CreateFormView: React.FC = () => {
   return (
     <div className="container mt-5">
         <CreateForm />
-        <UpdateForm />
+         <UpdateForm />
         <hr className="my-5" />
-        <ProductList />
+         <ProductList />
         {/* <ProductRequestList /> */}
     </div>
   )

@@ -23,7 +23,7 @@ export interface IProductContextType {
 
     create: (e: React.FormEvent) => void
     get: (articleNumber: string) => void
-    getAll: (take: number) => void
+    getAll: () => void
     getFeatured: (take: number) => void
     getFlashSaleProducts: (take?: number) => void
     update: (e: React.FormEvent) => void
@@ -77,32 +77,20 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
         
     }
 
-    // Get
+    // GetById
 
     const get = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-            const res = await fetch(`${baseUrl}/details/${articleNumber}`)   // (http://localhost:5550/api/products/details/$articleNumber)
+            const res = await fetch(`${baseUrl}/products/details/${articleNumber}`) // (http://localhost:5550/api/products/details/$articleNumber)
             setProduct(await res.json())
         }
     }
 
 
 
-    // // getAll First vers.
-    // const getAll = async (take: number = 0) => {
-    //   let url = baseUrl
-
-    //   if (take !== 0)
-    //       url = baseUrl + `?take=${take}`
-
-    //   const res = await fetch(url)
-    //   setProducts(await res.json())
-    //  }
+    // getAll 
     
-
-    // getAll second vers.
-    
-    const getAll =async () => {
+    const getAll = async () => {
         const result = await fetch(`${baseUrl}` )
         
         if (result.status === 200)
@@ -118,7 +106,9 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
           url += `/featured/${take}`
 
       const res = await fetch(url)
-      setFeatured(await res.json())
+      const data = await res.json()
+      
+      setFeatured(data)
       
      }
 
@@ -127,7 +117,7 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
         let  url = `${baseUrl}`
   
         if (take !== 0)
-            url += `flashsale${take}`
+            url += `/flashsale/${take}`
   
         const res = await fetch(url)
         setFlashSaleProducts(await res.json())

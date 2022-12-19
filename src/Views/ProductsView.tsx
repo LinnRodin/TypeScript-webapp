@@ -11,7 +11,7 @@ const ProductsView: React.FC = () => {
    const {products, getAll} = useProductContext() as IProductContextType
 
    useEffect (()=> {
-    getAll(12)
+    getAll()
 
   
   
