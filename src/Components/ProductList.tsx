@@ -16,7 +16,7 @@ const ProductList = () => {
         <>
             <h3 className="display-6 mb-4">ADD PRODUCT</h3>
             {
-                products.slice(0, 4).map((product: Product) => (<div key={product.articleNumber} className="mb-3">{product.category}{product.imageURL}{product.title}{product.name}{product.description}{product.price}</div>))
+                products.map((product: Product) => (<div key={product.articleNumber} className="mb-3">{product.category}{product.imageURL}{product.title}{product.name}{product.description}{product.price}</div>))
             }
     
         </>

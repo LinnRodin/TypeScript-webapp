@@ -40,7 +40,7 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
     
     const baseUrl: string = 'http://localhost:5550/api/products'
     const EMPTY_PRODUCT: Product = { tag: '', articleNumber: '', name: '', category: '', price: 0, imageURL: '' } //Hur produkten skall se ut specifikt 
-    const EMPTY_PRODUCTREQUEST: ProductRequest = { category: '', imageURL: '', title: '', description: '', price: 0}
+    const EMPTY_PRODUCTREQUEST: ProductRequest = { category: '', name: '', imageURL: '', title: '', description: '', price: 0}
 
     const [productRequest, setProductRequest] = useState<ProductRequest>(EMPTY_PRODUCTREQUEST) //En speciell typ av produkt
     const [product, setProduct] = useState<Product>(EMPTY_PRODUCT) //En speciell typ av produkt
@@ -81,7 +81,7 @@ export const ProductProvider: React.FC<IProductProviderType> = ({children}) => {
 
     const get = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-            const res = await fetch(`${baseUrl}/products/details/${articleNumber}`) // (http://localhost:5550/api/products/details/$articleNumber)
+            const res = await fetch(`${baseUrl}/products/details/${articleNumber}`) // (http://localhost:5550/api/products/products/details/$articleNumber)
             setProduct(await res.json())
         }
     }
