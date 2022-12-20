@@ -9,6 +9,7 @@ const UpdateForm = () => {
     <form onSubmit={update} className='d-grid mb-5'>
       <h3 className="display-6 mb-4">EDIT PRODUCT</h3>
       <input value={product.articleNumber} onChange={(e) => setProduct({...product, articleNumber: e.target.value})} type="text" className="form-control py-2 mb-3" placeholder='Enter articlenumber...' />
+      <input value={product.name} onChange={(e) => setProduct({...product, name: e.target.value})} type="text" className="form-control py-2 mb-3" placeholder='Enter name...' />
       <input value={product.category} onChange={(e) => setProduct({...product, category: e.target.value})} type="text" className="form-control py-2 mb-3" placeholder='Enter category...' />
       <input value={product.imageURL} onChange={(e) => setProduct({...product, imageURL: e.target.value})} type="text" className="form-control py-2 mb-3" placeholder='Enter imageURL...' />
       <input value={product.title} onChange={(e) => setProduct({...product, title: e.target.value})} type="text" className="form-control py-2 mb-3" placeholder='Enter title...' />
