@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoContext, TodoContextType } from '../Contexts/TodoContext';
+import { TodoContext, TodoContextType } from '../Contexts/TodoContext'; //SAVED PRACTICE FOR FUTURE TRAINING!
 import { Todo } from '../Models/todoModel'
 
 

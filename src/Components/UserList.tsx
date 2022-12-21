@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {IUserContext, UserContext} from '../Contexts/UserContext'
+import {IUserContext, UserContext} from '../Contexts/UserContext' //SAVED PRACTICE FOR FUTURE TRAINING!
 import { User } from '../Models/UserModel'
 
 const UserList = () => {

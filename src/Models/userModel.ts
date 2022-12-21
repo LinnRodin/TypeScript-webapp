@@ -1,6 +1,6 @@
 
 
-export interface User {
+export interface User {  //SAVED PRACTICE FOR FUTURE TRAINING!
     id: number
     firstName: string
     lastName: string
